@@ -8,10 +8,9 @@ export function MenuGrid() {
 
   return (
     <section id="menu" className="menu-section">
-      
       <div className="section-heading">
         <p className="section-kicker">Menu</p>
-        <h2>Bowls, shakes, pancakes and more</h2>
+        <h2>Crave-worthy meals, built to hit your macros</h2>
       </div>
       <div ref={ref} className="menu-grid">
         {bowls.map((bowl, index) => (

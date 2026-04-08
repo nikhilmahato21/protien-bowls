@@ -269,6 +269,22 @@ button {
   min-height: 170px;
 }
 
+.bowl-image-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 38%),
+    linear-gradient(135deg, #dae9b9, #f2ddab 55%, #efc28f);
+  color: #4c4a33;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .bowl-image {
   display: block;
   width: 100%;
@@ -292,6 +308,11 @@ button {
   color: #6d634f;
   font-size: 0.78rem;
   font-weight: 700;
+}
+
+.simple-tag-accent {
+  background: #ffe4d8;
+  color: #a44f28;
 }
 
 .bowl-content {

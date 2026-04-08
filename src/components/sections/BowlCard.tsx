@@ -9,6 +9,7 @@ interface BowlCardProps {
 
 export function BowlCard({ bowl, index, visible }: BowlCardProps) {
   const [isOrdering, setIsOrdering] = useState(false);
+  const [imageMissing, setImageMissing] = useState(false);
 
   const handleOrder = () => {
     if (isOrdering) return;
@@ -16,34 +17,65 @@ export function BowlCard({ bowl, index, visible }: BowlCardProps) {
     window.setTimeout(() => setIsOrdering(false), 1400);
   };
 
+  const macroPills = [
+    { label: 'Protein', value: `${bowl.nutrition.protein}g` },
+    { label: 'Carbs', value: `${bowl.nutrition.carbs}g` },
+    { label: 'Fat', value: `${bowl.nutrition.fat}g` },
+  ];
+
+  const tags = [
+    bowl.isRecommended ? 'Recommended' : undefined,
+    bowl.category,
+    bowl.type === 'veg' ? 'Veg' : 'Non-Veg',
+    bowl.serving,
+    `${bowl.nutrition.calories} kcal`,
+  ].filter(Boolean) as string[];
+
   return (
     <article
       className={`bowl-card ${visible ? 'is-visible' : ''}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       <div className="bowl-image-wrap">
-        <img className="bowl-image" src={bowl.image} alt={bowl.name} />
+        {imageMissing ? (
+          <div className="bowl-image-fallback" aria-hidden="true">
+            <span>{bowl.type === 'veg' ? 'Veg' : 'Protein'}</span>
+          </div>
+        ) : (
+          <img
+            className="bowl-image"
+            src={bowl.image}
+            alt={bowl.name}
+            loading="lazy"
+            decoding="async"
+            onError={() => setImageMissing(true)}
+          />
+        )}
       </div>
       <div className="bowl-content">
         <div className="bowl-head">
           <div>
             <h3>{bowl.name}</h3>
-            <div className="macro-pills">
-              {bowl.macros.map((macro) => (
+            <div className="macro-pills" aria-label={`${bowl.name} macros`}>
+              {macroPills.map((macro) => (
                 <span key={macro.label} className="macro-pill">
-                  {macro.value}
-                  {macro.suffix} {macro.label}
+                  {macro.value} {macro.label}
                 </span>
               ))}
             </div>
           </div>
           <span className="price-pill">Rs. {bowl.price}</span>
         </div>
+
         <p className="bowl-description">{bowl.description}</p>
+
         <div className="bowl-footer">
           <div className="tag-row">
-            {bowl.tags.map((tag) => (
-              <span key={tag} className="simple-tag">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className={`simple-tag ${tag === 'Recommended' ? 'simple-tag-accent' : ''}`}
+              >
                 {tag}
               </span>
             ))}

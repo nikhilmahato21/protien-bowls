@@ -1,6 +1,9 @@
 import { MenuGrid } from './components/sections/MenuGrid';
 import { ZomatoLogo } from './components/ui/ZomatoLogo';
 
+const zomatoUrl =
+  'https://www.zomato.com/ncr/protein-bowls-sector-43-gurgaon';
+
 function App() {
   return (
     <div className="app-shell" id="top">
@@ -15,7 +18,7 @@ function App() {
         </div>
         <a
           className="header-badge"
-          href="https://www.zomato.com"
+          href={zomatoUrl}
           target="_blank"
           rel="noreferrer"
           aria-label="Open Zomato"
@@ -52,12 +55,18 @@ function App() {
         <MenuGrid />
       </main>
       <footer className="site-footer">
-        <button type="button" className="footer-zomato-button">
+        <a
+          className="footer-zomato-button"
+          href={zomatoUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Find us on Zomato"
+        >
           <span>Find us on Zomato</span>
           <span className="footer-zomato-logo">
             <ZomatoLogo />
           </span>
-        </button>
+        </a>
       </footer>
     </div>
   );
