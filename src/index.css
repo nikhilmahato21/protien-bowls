@@ -1,0 +1,529 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Avenir Next", "Satoshi", "Segoe UI", sans-serif;
+  color: #1f241d;
+  background: #f6f0e3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --surface: #fffaf0;
+  --surface-soft: #efe5d3;
+  --stroke: #dccdb2;
+  --text-soft: #5b5b52;
+  --green: #b8de66;
+  --green-deep: #426431;
+  --shadow: 0 14px 34px rgba(87, 65, 36, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.4rem 0 3rem;
+  overflow: hidden;
+}
+
+.top-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.top-decoration {
+  position: absolute;
+  width: 4.6rem;
+  height: auto;
+  opacity: 0.16;
+  animation-name: driftFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.deco-bowl {
+  right: 7.8rem;
+  top: 2.2rem;
+  animation-duration: 6.2s;
+  animation-delay: -1.1s;
+}
+
+.deco-shake {
+  right: 14.8rem;
+  top: 1rem;
+  width: 3.9rem;
+  animation-duration: 5.4s;
+  animation-delay: -2.3s;
+}
+
+.deco-pancake {
+  right: 20.4rem;
+  top: 3rem;
+  width: 4.2rem;
+  animation-duration: 7.1s;
+  animation-delay: -0.6s;
+}
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 1rem;
+  padding: 0.2rem 0 1.5rem;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+  background: #20261e;
+  color: #f6f0e3;
+  font-weight: 800;
+}
+
+.menu-section {
+  position: relative;
+  z-index: 1;
+  padding: 0.4rem 0 0;
+}
+
+.menu-bg-illustrations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-art {
+  position: absolute;
+  opacity: 0.18;
+}
+
+.bg-art-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bg-art-bowls {
+  width: 9rem;
+  top: 0.2rem;
+  right: 0.5rem;
+}
+
+.bg-art-shakes {
+  width: 7rem;
+  top: 10rem;
+  left: -0.8rem;
+}
+
+.bg-art-pancakes {
+  width: 8rem;
+  top: 24rem;
+  right: 1.2rem;
+}
+
+.art-line {
+  fill: none;
+  stroke: #3b3125;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.art-shadow {
+  fill: #e7dcc7;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  letter-spacing: -0.03em;
+}
+
+.section-kicker {
+  margin: 0 0 0.3rem;
+  color: var(--text-soft);
+  font-size: 0.96rem;
+}
+
+.menu-grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bowl-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1rem;
+  padding: 0.9rem;
+  border-radius: 1.3rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--stroke);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 320ms ease,
+    transform 320ms ease;
+}
+
+.bowl-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zomato-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #e53935;
+}
+
+.zomato-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 999px;
+  display: block;
+}
+
+.header-badge {
+  width: 4.2rem;
+  height: 4.2rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: #fffaf0;
+  border: 01px solid var(--stroke);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.brand-copy {
+  margin-right: auto;
+}
+
+.brand-copy h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.brand-copy p {
+  margin: 0.2rem 0 0;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+.bowl-image-wrap {
+  border-radius: 1rem;
+  background: var(--surface-soft);
+  overflow: hidden;
+  min-height: 170px;
+}
+
+.bowl-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag-row {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.simple-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.85rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: #f2ead8;
+  color: #6d634f;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bowl-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.bowl-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bowl-head h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.bowl-description {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.price-pill {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: #20261e;
+  color: #f6f0e3;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.macro-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+}
+
+.macro-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--green-deep);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.order-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3.1rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: 999px;
+  border: 2px solid #e23744;
+  background: #fffdf8;
+  color: #e23744;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.order-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(226, 55, 68, 0.14);
+}
+
+.order-button.is-ordering {
+  background: #fff1f2;
+  border-color: #d92d3a;
+  color: #d92d3a;
+  animation: confirmFlash 0.5s ease;
+}
+
+.order-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-zomato-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.35rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: 999px;
+  border: 2px solid #e23744;
+  background: #fffdf8;
+  color: #e23744;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.footer-zomato-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.footer-zomato-logo .zomato-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.7rem;
+}
+
+.bowl-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-top: auto;
+}
+
+@keyframes confirmFlash {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.18);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes driftFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(-4px, -10px, 0) rotate(-2deg);
+  }
+  60% {
+    transform: translate3d(5px, 8px, 0) rotate(1.5deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .bowl-card,
+  .bowl-head,
+  .bowl-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .top-decoration {
+    width: 3.2rem;
+  }
+
+  .deco-bowl {
+    left: 3.7rem;
+    top: 2.8rem;
+  }
+
+  .deco-shake {
+    left: 7.8rem;
+    top: 1.1rem;
+  }
+
+  .deco-pancake {
+    left: 10.7rem;
+    top: 4rem;
+  }
+
+  .header-badge {
+    display: none;
+  }
+
+  .bowl-image-wrap {
+    width: 100%;
+    min-height: 210px;
+  }
+
+  .order-button {
+    width: 100%;
+  }
+
+  .footer-zomato-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bg-art-bowls {
+    width: 6.5rem;
+    top: 0.5rem;
+    right: 0;
+  }
+
+  .bg-art-shakes {
+    width: 5.2rem;
+    top: 13rem;
+    left: -0.6rem;
+  }
+
+  .bg-art-pancakes {
+    width: 6rem;
+    top: 27rem;
+    right: 0;
+  }
+}
