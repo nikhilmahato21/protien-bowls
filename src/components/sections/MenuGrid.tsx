@@ -4,7 +4,10 @@ import { BowlCard } from './BowlCard';
 
 
 export function MenuGrid() {
-  const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.12 });
+  const { ref, isInView } = useInView<HTMLDivElement>({
+    threshold: 0,
+    rootMargin: '0px 0px 160px 0px',
+  });
 
   return (
     <section id="menu" className="menu-section">
