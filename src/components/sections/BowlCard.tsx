@@ -10,11 +10,11 @@ interface BowlCardProps {
 export function BowlCard({ bowl, index, visible }: BowlCardProps) {
   const [isOrdering, setIsOrdering] = useState(false);
   const [imageMissing, setImageMissing] = useState(false);
+  const hasOrderLink = Boolean(bowl.link);
 
-  const handleOrder = () => {
-    if (isOrdering) return;
+  const handleOrderClick = () => {
+    if (!hasOrderLink) return;
     setIsOrdering(true);
-    window.setTimeout(() => setIsOrdering(false), 1400);
   };
 
   const macroPills = [
@@ -80,27 +80,49 @@ export function BowlCard({ bowl, index, visible }: BowlCardProps) {
               </span>
             ))}
           </div>
-          <button
-            type="button"
-            className={`order-button ${isOrdering ? 'is-ordering' : ''}`}
-            onClick={handleOrder}
-          >
-            <span>{isOrdering ? 'Opening…' : 'Order on Zomato'}</span>
-            <svg
-              className="order-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          {hasOrderLink ? (
+            <a
+              className={`order-button ${isOrdering ? 'is-ordering' : ''}`}
+              href={bowl.link}
+              target="_blank"
+              rel="noreferrer"
+              onClick={handleOrderClick}
             >
-              <path d="M14 5h5v5" />
-              <path d="M10 14 19 5" />
-              <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
-            </svg>
-          </button>
+              <span>{isOrdering ? 'Opening…' : 'Order on Zomato'}</span>
+              <svg
+                className="order-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 5h5v5" />
+                <path d="M10 14 19 5" />
+                <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
+              </svg>
+            </a>
+          ) : (
+            <button type="button" className="order-button" disabled>
+              <span>Coming Soon</span>
+              <svg
+                className="order-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 5h5v5" />
+                <path d="M10 14 19 5" />
+                <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </article>

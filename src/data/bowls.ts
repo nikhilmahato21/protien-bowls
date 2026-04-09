@@ -4,7 +4,7 @@ export const bowls: Bowl[] = [
   {
     id: 'whey-protein-brownie',
     name: 'Whey Protein Brownie',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/ny1jq602',
     serving: '50g',
     price: 79,
     type: 'veg',
@@ -30,7 +30,7 @@ export const bowls: Bowl[] = [
   {
     id: 'grilled-chicken-platter',
     name: 'Grilled Chicken Platter',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/i86w7kwc',
     serving: 'Serves 1-2',
     price: 449,
     type: 'non-veg',
@@ -53,7 +53,7 @@ export const bowls: Bowl[] = [
   {
     id: 'paneer-burrito-bowl',
     name: 'Paneer Burrito Bowl',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/aozilavs',
     serving: 'Serves 1',
     price: 499,
     type: 'veg',
@@ -79,7 +79,7 @@ export const bowls: Bowl[] = [
   {
     id: 'avocado-sandwich',
     name: 'Avocado Sandwich',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/12501996',
     price: 349,
     type: 'veg',
     category: 'sandwiches',
@@ -104,7 +104,7 @@ export const bowls: Bowl[] = [
   {
     id: 'protein-pancakes',
     name: 'Protein Pancakes',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/kazkey5h',
     serving: 'Serves 1',
     price: 329,
     type: 'veg',
@@ -130,7 +130,7 @@ export const bowls: Bowl[] = [
   {
     id: 'blueberry-whey-protein-shake',
     name: 'Blueberry Whey Protein Shake',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/2ga73nnc',
     price: 379,
     type: 'veg',
     category: 'shakes',
@@ -154,7 +154,7 @@ export const bowls: Bowl[] = [
   {
     id: 'quinoa-broccoli-bowl',
     name: 'Quinoa Broccoli Bowl',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/8vafbdrz',
     serving: 'Serves 1-2',
     price: 399,
     type: 'veg',
@@ -179,7 +179,7 @@ export const bowls: Bowl[] = [
   {
     id: 'aglio-olio-pasta-grilled-chicken',
     name: 'Aglio Olio Pasta with Grilled Chicken Breast',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/4y4xihk6',
     serving: '1 serving',
     price: 599,
     type: 'non-veg',
@@ -205,7 +205,7 @@ export const bowls: Bowl[] = [
   {
     id: 'grilled-tilapia-fish',
     name: 'Grilled Tilapia Fish',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/60b2tr07',
     serving: '200g Raw',
     price: 319,
     type: 'non-veg',
@@ -227,7 +227,7 @@ export const bowls: Bowl[] = [
   {
     id: 'grilled-chicken-wrap',
     name: 'Grilled Chicken Wrap',
-    link: '',
+    link: 'https://zomato.onelink.me/xqzv/rqqaadey',
     price: 349,
     type: 'non-veg',
     category: 'wraps',
