@@ -8,14 +8,8 @@ interface BowlCardProps {
 }
 
 export function BowlCard({ bowl, index, visible }: BowlCardProps) {
-  const [isOrdering, setIsOrdering] = useState(false);
   const [imageMissing, setImageMissing] = useState(false);
   const hasOrderLink = Boolean(bowl.link);
-
-  const handleOrderClick = () => {
-    if (!hasOrderLink) return;
-    setIsOrdering(true);
-  };
 
   const macroPills = [
     { label: 'Protein', value: `${bowl.nutrition.protein}g` },
@@ -82,13 +76,12 @@ export function BowlCard({ bowl, index, visible }: BowlCardProps) {
           </div>
           {hasOrderLink ? (
             <a
-              className={`order-button ${isOrdering ? 'is-ordering' : ''}`}
+              className="order-button"
               href={bowl.link}
               target="_blank"
               rel="noreferrer"
-              onClick={handleOrderClick}
             >
-              <span>{isOrdering ? 'Opening…' : 'Order on Zomato'}</span>
+              <span>Order on Zomato</span>
               <svg
                 className="order-icon"
                 viewBox="0 0 24 24"

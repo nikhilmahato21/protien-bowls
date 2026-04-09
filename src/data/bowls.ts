@@ -14,7 +14,7 @@ export const bowls: Bowl[] = [
       'Sugar-free, eggless whey protein brownie made from whey protein, oats flour, dark chocolate, grated carrots, dried fruits and topped with chunks of walnuts and dark chocolate.',
     nutrition: {
       calories: 216,
-      protein: 10,
+      protein: 6,
       fat: 11,
       carbs: 19,
       fibre: 4,
@@ -40,7 +40,7 @@ export const bowls: Bowl[] = [
       '180g raw grilled chicken breast with sauteed vegetables and carbs of choice.',
     nutrition: {
       calories: 563,
-      protein: 49,
+      protein: 44,
       fat: 19,
       carbs: 49,
       fibre: 7,
@@ -63,7 +63,7 @@ export const bowls: Bowl[] = [
       'Sauteed paneer cubes in mexican sauce, served on cilantro rice with guacamole, fresh salsa, kidney beans and high-protein sour cream.',
     nutrition: {
       calories: 451,
-      protein: 16,
+      protein: 23,
       fat: 20,
       carbs: 52,
       fibre: 7,
@@ -88,7 +88,7 @@ export const bowls: Bowl[] = [
       'Fresh guacamole and avocado slices stuffed in multigrain whole wheat panini. Served with ketchup.',
     nutrition: {
       calories: 437,
-      protein: 12,
+      protein: 14,
       fat: 23,
       carbs: 46,
       fibre: 9,
@@ -139,7 +139,7 @@ export const bowls: Bowl[] = [
       '30g of protein with no added sugar. Whey protein blended with blueberries and banana to a thick consistency for a satisfying shake.',
     nutrition: {
       calories: 281,
-      protein: 26,
+      protein: 30,
       fat: 7,
       carbs: 28,
       fibre: 3,
@@ -236,7 +236,7 @@ export const bowls: Bowl[] = [
       'Whole wheat tortilla stuffed with sauteed chicken, lettuce and creamy greek yogurt sauce. Served with mint chutney.',
     nutrition: {
       calories: 329,
-      protein: 25,
+      protein: 30,
       fat: 14,
       carbs: 25,
       fibre: 3,
@@ -288,7 +288,7 @@ export const bowls: Bowl[] = [
       'Sauteed chicken cubes in mexican sauce, served on cilantro rice with creamy guacamole, fresh salsa, red kidney beans and high-protein sour cream',
     nutrition: {
       calories: 385,
-      protein: 24,
+      protein: 43,
       fat: 14,
       carbs: 42,
       fibre: 9,
@@ -313,7 +313,7 @@ export const bowls: Bowl[] = [
       '150g grilled paneer with a side of sauteed vegetables and an option to choose carbs of your choice',
     nutrition: {
       calories: 690,
-      protein: 44,
+      protein: 39,
       fat: 42,
       carbs: 35,
       fibre: 8,
@@ -338,7 +338,7 @@ export const bowls: Bowl[] = [
       'Sugar-free flavoured greek yoghurt topped with berries, kiwi, muesli, pomegranate, dark chocolate chips, chia seeds and dry fruits',
     nutrition: {
       calories: 443,
-      protein: 21,
+      protein: 13,
       fat: 15,
       carbs: 57,
       fibre: 10,
@@ -388,7 +388,7 @@ export const bowls: Bowl[] = [
       '30g of protein with no added sugar. Cold coffee substitute made with whey protein, coffee, Arabian dates and milk.',
     nutrition: {
       calories: 276,
-      protein: 27,
+      protein: 30,
       fat: 6,
       carbs: 28,
       fibre: 2,
@@ -413,7 +413,7 @@ export const bowls: Bowl[] = [
       'Low starch white rice sauteed with 80g of sauteed soya chunks and veggies. Served with carrots and sauce of your choice',
     nutrition: {
       calories: 608,
-      protein: 34,
+      protein: 35,
       fat: 13,
       carbs: 89,
       fibre: 9,
@@ -438,7 +438,7 @@ export const bowls: Bowl[] = [
       'Whole wheat tortilla filled with peri peri paneer, lettuce and creamy greek yogurt sauce (no mayo). Served with mint chutney',
     nutrition: {
       calories: 310,
-      protein: 13,
+      protein: 22,
       fat: 17,
       carbs: 27,
       fibre: 3,
