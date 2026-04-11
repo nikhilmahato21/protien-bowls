@@ -3,15 +3,15 @@ import { ZomatoLogo } from './components/ui/ZomatoLogo';
 
 const zomatoUrl =
   'https://www.zomato.com/ncr/protein-bowls-sector-43-gurgaon';
+const logoUrl =
+  'https://res.cloudinary.com/dynbpb9u0/image/upload/v1775894226/protien/PB_Color_Logo_2_jgtoei.png';
 
 function App() {
   return (
     <div className="app-shell" id="top">
       
-      <header className="site-header">
-        <div className="brand-mark" aria-hidden="true">
-          PB
-        </div>
+      <header className="site-header ">
+        <img className="brand-mark rounded-full object-cover scale-110 " src={logoUrl} alt="Protien Bowls logo" />
         <div className="brand-copy">
           <h1>Protien Bowls</h1>
           <p>Bowls, shakes, cakes and more, all in one place.</p>

@@ -101,19 +101,15 @@ button {
   justify-content: space-between;
   display: flex;
   gap: 1rem;
-  padding: 0.2rem 0 1.5rem;
+  padding: 0.2rem 3rem 1.5rem;
 }
 
 .brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 999px;
-  background: #20261e;
-  color: #f6f0e3;
-  font-weight: 800;
+  display: block;
+  width: 3.6rem;
+  height: 3.6rem;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .menu-section {
